@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Nara Design Tokens */
+  --color-primary: #E8836A;
+  --color-primary-light: #F2A48E;
+  --color-secondary: #FFD93D;
+  --color-accent: #FAF7F2;
+  --color-sage: #8FAF8F;
+  --color-border: #EBE4D5;
+  --color-text-primary: #2C2C2C;
+  --color-text-secondary: #8FAF8F;
+  --color-text-muted: #C3BDB0;
+  --color-states-success: #8FAF8F;
+  --color-states-warning: #FFD93D;
+  --color-states-error: #E8836A;
+  --color-card: #FFFFFF;
+
+  /* Child interface colors */
+  --color-child-yellow: #FFD93D;
+  --color-child-coral: #FF6B6B;
+  --color-child-teal: #4ECDC4;
+  --color-child-bg: #FFFBF0;
+  --color-child-purple: #C084FC;
+  --color-child-green: #86EFAC;
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-child: "Nunito", system-ui, sans-serif;
+
+  /* Shadcn compatibility */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: #FAF7F2;
+  --foreground: #2C2C2C;
+  --card: #FFFFFF;
+  --card-foreground: #2C2C2C;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2C2C;
+  --primary: #E8836A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F0E8;
+  --secondary-foreground: #2C2C2C;
+  --muted: #F5F0E8;
+  --muted-foreground: #C3BDB0;
+  --accent: #F5F0E8;
+  --accent-foreground: #2C2C2C;
+  --destructive: #E8836A;
+  --border: #EBE4D5;
+  --input: #EBE4D5;
+  --ring: #E8836A;
+  --radius: 0.75rem;
+  --sidebar: #FAF7F2;
+  --sidebar-foreground: #2C2C2C;
+  --sidebar-primary: #E8836A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F0E8;
+  --sidebar-accent-foreground: #2C2C2C;
+  --sidebar-border: #EBE4D5;
+  --sidebar-ring: #E8836A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  body {
+    @apply bg-[#FAF7F2] text-[#2C2C2C];
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #f0ebe4 25%, #e8e0d6 50%, #f0ebe4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+/* Confetti */
+@keyframes confetti-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) rotate(720deg); opacity: 0; }
+}
+
+/* Child bounce */
+@keyframes child-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Star pulse */
+@keyframes star-pulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.3) rotate(15deg); }
+}
+
+/* Gentle glow for crisis card */
+@keyframes gentle-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(232, 131, 106, 0.2); }
+  50% { box-shadow: 0 4px 30px rgba(232, 131, 106, 0.4); }
+}
+
+/* Nara scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #EBE4D5; border-radius: 9999px; }
