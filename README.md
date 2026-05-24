@@ -1,3 +1,4 @@
+live link - https://nara-039e736d.eazo.dev/
 A minimal Next.js starter for building apps inside the [Eazo](https://eazo.ai) platform. Includes a working example of the Eazo session token flow: the app requests the encrypted user token from the host via `postMessage`, sends it to a Next.js API route, decrypts it server-side with `@eazo/node-sdk`, and returns the user profile.
 
 ## Getting Started
